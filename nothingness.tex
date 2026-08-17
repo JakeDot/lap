@@ -1,0 +1,179 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\geometry{margin=1in}
+
+\title{“Nothing” and Hawking Radiation: Vacuum vs. Stronger Notions of Nothingness}
+\author{ }
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Hawking radiation is often interpreted informally as ``particle creation from nothing,'' motivating the broader question of whether black-hole evaporation implies that ``nothingness'' can generate something. In this paper, we make the inference explicit and show where it is supported and where it fails. We first distinguish several notions of ``nothing'': a quantum vacuum (no particles excited), observer-dependent particle concepts, empty spacetime with fields in their ground state, and the stronger (model-dependent) idea of ``no classical geometry'' or ``ex nihilo'' conditions. We then review the semiclassical mechanism underlying Hawking radiation: quantum field theory on a curved spacetime background and the mixing of mode definitions between near-horizon and asymptotic observers. Finally, we argue that Hawking radiation demonstrates ``creation of excitations relative to a chosen vacuum,'' not literal absence of all physical structure. The paper concludes by clarifying which parts of the ``nothingness'' debate are addressed by known physics and which require quantum-gravity or philosophical assumptions beyond the semiclassical framework.
+\end{abstract}
+
+\section{Introduction}
+The phrase ``creation from nothing'' arises naturally when Hawking radiation is described qualitatively as quanta emerging from what appears to be empty space. This intuition is philosophically and theologically significant: if radiation can emerge from ``nothing,'' it seems to challenge the idea that something must already exist.
+
+However, physics rarely means ``nothing'' in the strongest sense. In quantum field theory (QFT), ``vacuum'' is not literal nonexistence; it is a state of the fields. In curved spacetime, ``particles'' are also not unique objects; different observers can disagree on what constitutes a particle. Consequently, Hawking radiation is best understood as the prediction that, for certain backgrounds with horizons, observers at infinity will detect a thermal flux even when the relevant field state is ``empty'' with respect to an appropriate notion of vacuum.
+
+This motivates the central thesis of this paper: Hawking radiation supports a limited, technically precise claim about the emergence of excitations from a vacuum state, but it does not establish literal ``ex nihilo'' creation of spacetime or the complete absence of physical structure.
+
+\section{Notions of ``Nothing'': Definitions and Notation}
+To avoid ambiguity, we introduce categories of ``nothing'' and indicate how each maps (or does not map) onto the Hawking-radiation setup. The symbols in brackets are purely for readability; they do not alter physics.
+
+\subsection{Category A: Quantum vacuum}
+\textbf{Definition A (vacuum).} \emph{Vacuum} refers to a quantum state of the relevant field(s) that is the ground state (or chosen ``no-excitation'' state) with respect to a given mode decomposition.
+
+\medskip
+\noindent \textbf{Notation:} $\langle 0\rangle$ or \{vac\}.
+In standard QFT language, a vacuum still contains zero-point fluctuations; it is ``empty of particles,'' not empty of fields.
+
+\subsection{Category B: Particle concept (observer dependence)}
+\textbf{Definition B (particle concept).} The notion of ``particle number'' is not invariant in curved spacetime. Particle definitions depend on the choice of timelike Killing vectors, observers, and mode functions.
+
+\medskip
+\noindent \textbf{Notation:} \{np\}.
+A state can look ``empty'' to one class of observers and ``filled'' to another.
+
+\subsection{Category C: Empty spacetime (no classical matter excitations)}
+\textbf{Definition C (empty spacetime).} Spacetime geometry exists (a metric background is assumed), but there are no classical matter sources or additional excitations beyond the field state (typically the vacuum state).
+
+\medskip
+\noindent \textbf{Notation:} \{empty-space\}.
+In this category, Hawking radiation arises precisely because geometry plus quantum fields yield nontrivial detector responses.
+
+\subsection{Category D: No classical geometry / pre-geometric regime}
+\textbf{Definition D (no classical geometry).} ``No classical geometry'' means that the semiclassical approximation (QFT on a fixed curved background) is not applicable. One would need quantum-gravity degrees of freedom and an effective notion of spacetime that emerges in some limit.
+
+\medskip
+\noindent \textbf{Notation:} \{pre-geo\}.
+This category is often invoked in ``creation of spacetime'' discussions but is model-dependent.
+
+\subsection{Category E: Literal nothing (ex nihilo in the strongest sense)}
+\textbf{Definition E (literal nothing).} Literal ``nothing'' means the complete absence of physical reality in the sense required to define states, observables, and dynamics.
+
+\medskip
+\noindent \textbf{Notation:} \{ex-nihilo\}.
+Physics frameworks generally do not define or compute dynamics from this category as a standard initial condition.
+
+\medskip
+\noindent\textbf{Interpretive rule for this paper:}
+Unless otherwise stated, Hawking radiation addresses \{vac\}--\{empty-space\} and the observer-dependent particle meaning \{np\}. It does not by itself establish \{pre-geo\} or \{ex-nihilo\}.
+
+\section{Semiclassical Setup for Hawking Radiation}
+In the standard semiclassical picture, one assumes:
+\begin{itemize}[leftmargin=2em]
+\item A classical curved spacetime containing a black-hole horizon (e.g., formed by collapse or taken as an eternal black hole).
+\item A quantum field on this fixed background.
+\item A choice of vacuum state associated with a ``natural'' notion of emptiness (e.g., at past null infinity for a collapse geometry, or the appropriate Hartle--Hawking/Unruh vacua depending on scenario).
+\item Detectors at future null infinity that measure outgoing quanta.
+\end{itemize}
+
+A key result is that the mode decomposition used to define positive-frequency modes near the horizon differs from that appropriate for defining positive-frequency modes at infinity. This mismatch leads to nontrivial Bogoliubov coefficients and consequently a thermal particle flux.
+
+\subsection{Particle concept and mode mixing}
+Let the field operator be expanded in two different complete sets of mode functions, leading to annihilation and creation operators related by a Bogoliubov transformation:
+\begin{equation}
+a_{\omega}^{\mathrm{out}} = \sum_{\omega'} \left( \alpha_{\omega\omega'} a_{\omega'}^{\mathrm{in}} + \beta_{\omega\omega'} a_{\omega'}^{\mathrm{in}\,\dagger} \right).
+\end{equation}
+Even if the ``in'' state is vacuum with respect to the in-modes, the out-observers detect excitations, with an expectation value governed by $|\beta|^2$.
+
+\subsection{Thermal character}
+For a stationary black hole, the outgoing flux at infinity is approximately thermal with Hawking temperature
+\begin{equation}
+T_H = \frac{\kappa}{2\pi},
+\end{equation}
+where $\kappa$ is the surface gravity of the horizon (setting $\hbar=c=k_B=1$). This yields the qualitative and quantitative statement that horizons behave as effective thermal sources for suitable quantum fields.
+
+\section{Where ``Creation from Nothing'' Is Supported}
+We now connect the above mechanism to the categories of nothingness introduced earlier.
+
+\subsection{Hawking radiation as creation of excitations from a vacuum state}
+Interpreted in Category A (\{vac\}), Hawking radiation can be summarized as:
+\begin{quote}
+Even when the quantum field is in a vacuum state with respect to one mode choice, the presence of horizons implies that detectors associated with another observer class register a thermal flux.
+\end{quote}
+This is consistent with Category B (\{np\}): the particle concept is observer-dependent. The ``nothing'' is thus the absence of excitations relative to a particular vacuum definition, not literal absence of fields.
+
+\subsection{Energy flux as a measurable prediction}
+In semiclassical gravity, one can associate the outgoing flux at infinity with an expectation value of the stress-energy tensor for the quantum field. While global energy accounting in general relativity can be subtle, the prediction of a flux detectable at infinity is operationally meaningful within the semiclassical regime.
+
+Thus, physics supports a claim of the form: horizons cause a vacuum state (defined on a given background) to produce excitations detectable by distant observers.
+
+\section{Where the Inference to Literal Nothing Fails}
+The leap from \{vac\}--\{empty-space\} to \{ex-nihilo\} is not justified by the semiclassical derivation alone.
+
+\subsection{Hawking radiation does not remove the background assumption}
+The semiclassical computation presupposes:
+\begin{itemize}[leftmargin=2em]
+\item The existence of a spacetime geometry that possesses an effective horizon.
+\item The existence of quantum fields defined on that geometry.
+\item The possibility of defining in/out regions and detectors at infinity.
+\end{itemize}
+Therefore, Hawking radiation does not address Category E (\{ex-nihilo\}) in the strongest sense: the derivation assumes the very structure required to define the dynamics.
+
+\subsection{Vacuum is not ``nothing'' in the literal sense}
+Even if one defines ``nothing'' as ``no particles,'' the vacuum state still corresponds to a state of the fields (Category A). This already weakens the strongest interpretation of ``creation from nothing.''
+
+\subsection{Observer dependence limits naive metaphysical readings}
+Since the particle notion depends on observer and mode choice, the statement ``particles are created from nothing'' is, at best, a shorthand for mode-mixing relative to a chosen vacuum. This undercuts the idea that one can read the process as ``creation ex nihilo'' in a coordinate-independent metaphysical sense.
+
+\section{Discussion: Implications for Theological and Philosophical Readings}
+While theology and philosophy often interpret ``nothing'' and ``creation'' in different ways, physics can still clarify the boundary between:
+\begin{itemize}[leftmargin=2em]
+\item a technically defined ``vacuum'' and the emergence of excitations relative to it, and
+\item literal absence of spacetime, fields, and definitional structure.
+\end{itemize}
+
+This paper does not adjudicate metaphysical truth. It instead identifies what Hawking radiation establishes within known physics, and what it does not.
+
+A theological claim like ``creation ex nihilo'' may be compatible with the broad philosophical lesson that ``vacuum-like states can lead to observable phenomena,'' but the physical evidence does not, by itself, settle the stronger metaphysical question.
+
+\section{Conclusion}
+Hawking radiation provides a robust semiclassical mechanism in which quantum fields in a vacuum state—defined relative to a chosen notion of emptiness—produce a thermal flux for observers associated with the asymptotic region of a black-hole spacetime. This supports an interpretation of ``creation from nothing'' only in the limited sense of creation of excitations from a vacuum (\{vac\}, \{np\}, within \{empty-space\}).
+
+However, the Hawking mechanism does not establish literal ``nothingness'' (\{ex-nihilo\}) as physics defines it, because the derivation assumes spacetime geometry and quantum fields from the start. To address \{pre-geo\} or \{ex-nihilo\} one needs a theory that explains the emergence of semiclassical spacetime and quantum states from more fundamental principles.
+
+\section*{Acknowledgements}
+(Optionally add funding, advisors, or references.)
+
+\begin{thebibliography}{9}
+
+\bibitem{Hawking1975}
+S.~W.~Hawking,
+``Particle Creation by Black Holes,''
+\emph{Communications in Mathematical Physics} \textbf{43} (1975) 199--220.
+
+\bibitem{BirrellDavies}
+N.~D.~Birrell and P.~C.~W.~Davies,
+\emph{Quantum Fields in Curved Space},
+Cambridge University Press (1982).
+
+\bibitem{WaldQFTCS}
+R.~M.~Wald,
+\emph{Quantum Field Theory in Curved Spacetime and Black Hole Thermodynamics},
+University of Chicago Press (1994).
+
+\bibitem{ParkerFulling}
+L.~Parker,
+``Particle Creation in Expanding Universes,''
+\emph{Physical Review Letters} \textbf{21} (1968) 562--564.
+\end{thebibliography}
+
+\end{document}
