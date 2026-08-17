@@ -1,0 +1,57 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        uses: teatimeguest/setup-texlive@v1
+        with:
+          packages: >-
+            scheme-basic
+            latexmk
+            texlive-latex-recommended
+            texlive-latex-extra
+            texlive-fonts-recommended
+            texlive-fonts-extra
+
+      - name: Find main .tex
+        id: main
+        shell: bash
+        run: |
+          set -e
+          # Change this if your main file has a different name.
+          if [ -f paper.tex ]; then
+            echo "main=paper.tex" >> $GITHUB_OUTPUT
+          else
+            mainfile=$(ls -1 *.tex | head -n 1)
+            if [ -z "$mainfile" ]; then
+              echo "No .tex file found in repo root."
+              exit 1
+            fi
+            echo "main=$mainfile" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Compile
+        shell: bash
+        run: |
+          set -e
+          main="${{ steps.main.outputs.main }}"
+          latexmk -pdf -interaction=nonstopmode -halt-on-error "$main"
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: |
+            *.pdf
